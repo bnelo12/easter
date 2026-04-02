@@ -1,0 +1,69 @@
+.cryptic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+}
+
+.cryptic-card {
+  background: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  padding: 32px 36px;
+  max-width: 400px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cryptic-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #71717a;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.cryptic-clue {
+  font-size: 1.4em;
+  font-style: italic;
+  color: #f4f4f5;
+  line-height: 1.5;
+}
+
+.cryptic-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.cryptic-input {
+  font-size: 20px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: 2px solid #3f3f46;
+  background: #18181b;
+  color: #f4f4f5;
+  text-align: center;
+  width: 220px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.cryptic-input:focus {
+  border-color: #c084fc;
+}
+
+.cryptic-input.shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+.cryptic-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.1em;
+}

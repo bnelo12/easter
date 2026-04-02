@@ -1,0 +1,101 @@
+.connections {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.conn-solved {
+  width: 100%;
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: center;
+  color: #000;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.conn-solved strong {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.conn-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  width: 100%;
+}
+
+.conn-grid.shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+.conn-tile {
+  aspect-ratio: 1.4;
+  border-radius: 8px;
+  border: none;
+  background: #27272a;
+  color: #f4f4f5;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.conn-tile:hover {
+  background: #3f3f46;
+}
+
+.conn-tile.selected {
+  background: #52525b;
+  transform: scale(0.95);
+}
+
+.conn-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.conn-mistakes {
+  display: flex;
+  gap: 8px;
+}
+
+.mistake-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #52525b;
+  transition: background 0.3s;
+}
+
+.mistake-dot.used {
+  background: #ef4444;
+}
+
+.conn-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.conn-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.1em;
+  margin-top: 8px;
+}

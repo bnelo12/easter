@@ -1,0 +1,86 @@
+.screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+  min-height: 80vh;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  max-width: 500px;
+}
+
+.btn {
+  font-size: 18px;
+  padding: 12px 32px;
+  border-radius: 50px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 12px;
+  transition: transform 0.15s, box-shadow 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Progress dots */
+.progress {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: background 0.3s;
+}
+
+.dot.done {
+  background: var(--accent);
+}
+
+.dot.active {
+  background: var(--accent-border);
+  box-shadow: 0 0 0 3px var(--accent-bg);
+}
+
+/* Puzzle placeholder */
+.puzzle-placeholder {
+  width: 100%;
+  max-width: 500px;
+  min-height: 200px;
+  border: 2px dashed var(--border);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1em;
+  color: var(--text);
+}
+
+/* Reveal */
+.reveal-box {
+  background: var(--accent-bg);
+  border: 2px solid var(--accent);
+  border-radius: 16px;
+  padding: 32px 48px;
+  margin-top: 8px;
+}
+
+.secret {
+  font-size: 2em;
+  font-weight: 700;
+  color: var(--accent);
+}
