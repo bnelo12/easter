@@ -70,17 +70,55 @@
   color: var(--text);
 }
 
-/* Reveal */
-.reveal-box {
-  background: var(--accent-bg);
-  border: 2px solid var(--accent);
-  border-radius: 16px;
-  padding: 32px 48px;
-  margin-top: 8px;
+/* Secret reveal */
+.secret-reveal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 20px 24px;
+  background: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  font-size: 1.2em;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
-.secret {
-  font-size: 2em;
-  font-weight: 700;
+.secret-part {
+  color: #3f3f46;
+  transition: color 0.4s;
+  font-family: var(--mono);
+}
+
+.secret-part.revealed {
   color: var(--accent);
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.overlay-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 16px;
+  padding: 36px 32px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
 }

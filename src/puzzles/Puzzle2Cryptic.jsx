@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './Puzzle2Cryptic.css'
 
-const CLUE = 'Rearranged chairs on display (6)'
-const ANSWER = 'CHAIRS'
+const CLUE = 'He returned with a short flight for our anniversary. (6)'
+const ANSWER = 'EIGHTH'
 
 export default function Puzzle2Cryptic({ onComplete }) {
   const [guess, setGuess] = useState('')
@@ -13,6 +13,7 @@ export default function Puzzle2Cryptic({ onComplete }) {
     e.preventDefault()
     if (guess.toUpperCase().trim() === ANSWER) {
       setSolved(true)
+      onComplete()
     } else {
       setShake(true)
       setTimeout(() => setShake(false), 500)
@@ -26,14 +27,7 @@ export default function Puzzle2Cryptic({ onComplete }) {
         <p className="cryptic-clue">{CLUE}</p>
       </div>
 
-      {solved ? (
-        <div className="cryptic-message">
-          <p>You cracked it!</p>
-          <button className="btn" onClick={onComplete}>
-            Next Puzzle
-          </button>
-        </div>
-      ) : (
+      {!solved && (
         <form onSubmit={handleSubmit} className="cryptic-form">
           <input
             className={`cryptic-input ${shake ? 'shake' : ''}`}

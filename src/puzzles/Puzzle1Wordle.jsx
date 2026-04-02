@@ -74,6 +74,7 @@ export default function Puzzle1Wordle({ onComplete }) {
 
     if (currentGuess === ANSWER) {
       setGameState('won')
+      onComplete()
     } else if (newGuesses.length >= MAX_GUESSES) {
       setGameState('lost')
     }
@@ -149,15 +150,6 @@ export default function Puzzle1Wordle({ onComplete }) {
   return (
     <div className="wordle">
       <div className="wordle-grid">{rows}</div>
-
-      {gameState === 'won' && (
-        <div className="wordle-message">
-          <p>You got it!</p>
-          <button className="btn" onClick={onComplete}>
-            Next Puzzle
-          </button>
-        </div>
-      )}
 
       {gameState === 'lost' && (
         <div className="wordle-message">

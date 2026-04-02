@@ -2,10 +2,10 @@ import { useState } from 'react'
 import './Puzzle3Connections.css'
 
 const GROUPS = [
-  { label: 'Fruits', color: '#22c55e', words: ['APPLE', 'MANGO', 'PEACH', 'GRAPE'] },
-  { label: 'Colors', color: '#eab308', words: ['IVORY', 'CORAL', 'AMBER', 'SLATE'] },
-  { label: 'Planets', color: '#3b82f6', words: ['VENUS', 'EARTH', 'PLUTO', 'MARS'] },
-  { label: 'Dances', color: '#c084fc', words: ['SALSA', 'TANGO', 'WALTZ', 'POLKA'] },
+  { label: "Chores at Claire's House", color: '#22c55e', words: ['Feed the cats', 'Make the bed', 'Walk the dog', 'Empty the dishwasher'] },
+  { label: "Places we've been together", color: '#eab308', words: ['SF', 'Castlewellan', 'The National Gallery', 'Samoëns'] },
+  { label: 'Gifts', color: '#3b82f6', words: ['Calendar', 'Curling Stone', 'Frog', 'Card'] },
+  { label: 'Claire + Ben', color: '#c084fc', words: ['C', 'LA', 'Ire', 'Ben'] },
 ]
 
 function shuffle(arr) {
@@ -48,10 +48,11 @@ export default function Puzzle3Connections({ onComplete }) {
     )
 
     if (match) {
-      setSolved((prev) => [...prev, match])
+      const newSolved = [...solved, match]
+      setSolved(newSolved)
       setSelected([])
-      if (solved.length + 1 === GROUPS.length) {
-        // all solved — handled in render
+      if (newSolved.length === GROUPS.length) {
+        onComplete()
       }
     } else {
       setMistakes((m) => m + 1)
@@ -125,15 +126,6 @@ export default function Puzzle3Connections({ onComplete }) {
             </div>
           </div>
         </>
-      )}
-
-      {allSolved && (
-        <div className="conn-message">
-          <p>Perfect!</p>
-          <button className="btn" onClick={onComplete}>
-            Next Puzzle
-          </button>
-        </div>
       )}
 
       {lost && (
